@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Detail</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <h1>Movie Detail</h1>  
+  <div class="card_container">   
+    <div class="card">
+      <img src="{{movie.poster}}" alt="{{movie.title}} poster">
+      <a href="#">{{movie.title}}</a>
+      <p>Released Year: {{movie.release_year}}</p>
+      <p>Plot: {{movie.description}}</p>
+      <p>Rating: {{movie.rating}}</p>
+    </div>    
+  </div>  
+</body>
+</html>

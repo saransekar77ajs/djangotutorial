@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <h1>Student Dashboard</h1>
+    <div class="card-container">
+    {% for student in student_profile %}
+    <div class="card">
+      <img src="{{ student.image }}" alt="Student Image" />
+      <div class="card-body">
+        <h3>{{ student.name }}</h3>
+        <p><strong>Age:</strong> {{ student.age }}</p>
+        <p><strong>Course:</strong> {{ student.course }}</p>
+        <p><strong>Email:</strong> {{ student.email }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  
+</body>
+</html>
