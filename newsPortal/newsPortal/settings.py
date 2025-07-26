@@ -27,7 +27,7 @@ SECRET_KEY = "django-insecure-0h^1%#9ky67kko4x%5w7t46%in)$29z1-8o0%g%2xp%@ctbvmb
 DEBUG = True
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
+ALLOWED_HOSTS = ["django-news-portal.onrender.com", "localhost", "127.0.0.1"]
 
 
 # Application definition
