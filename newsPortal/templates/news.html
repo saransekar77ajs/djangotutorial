@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>News Page</title>
+</head>
+<body>
+  <div class="news-nav-bar">
+    <h1 class="news-details-h1">{{category|title}} News Details</h1>
+    <a href="{% url 'home' %}">
+      <img class="home-icon" src="{% static 'images/icons8-home-100.png' %}" alt="Home Page Icon">
+    </a>
+  </div>
+  <div class="news-list">
+    {% for article in articles %}  
+      <div class="news-card">
+        <h2>{{article.title}}</h2>
+        {% if article.author %}
+        <h3>{{article.author}}</h3>
+        {% endif %}
+        {% if article.description %}
+        <p>{{article.description}}</p>
+        {% endif %}
+        <a href="{{article.url}}">Read More</a>
+        {% if article.urlToImage  %}
+        <img class="news-image" src="{{article.urlToImage}}" alt="{{article.title}}">
+        {% endif %}
+      </div> 
+    {% endfor %}
+  </div>  
+</body>
+</html>

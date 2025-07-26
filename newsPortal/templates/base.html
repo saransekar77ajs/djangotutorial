@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>News Portal</title>
+</head>
+<body>
+  <div class="nav-container">
+    <div class="nav-left">
+      <img class="news-icon" src="{% static 'images/news-icon-47.jpg' %}" alt="Django News Logo">
+      <h1>Django News</h1>
+    </div>  
+    <ul class="category-list">
+      <li><a href="{% url 'news_by_category' 'business' %}">Business</a></li>
+      <li><a href="{% url 'news_by_category' 'entertainment' %}">Entertainment</a></li>
+      <li><a href="{% url 'news_by_category' 'general' %}">General</a></li>
+      <li><a href="{% url 'news_by_category' 'health' %}">Health</a></li>
+      <li><a href="{% url 'news_by_category' 'science' %}">Science</a></li>
+      <li><a href="{% url 'news_by_category' 'sports' %}">Sports</a></li>
+      <li><a href="{% url 'news_by_category' 'technology' %}">Technology</a></li>
+    </ul>
+  </div>  
+  {% block content %}
+  {% endblock %}
+</body>
+</html>
